@@ -39,6 +39,7 @@ dependencies:
   http:
   intl:
   motion_tab_bar:
+  buttons_tabbar:
   
 
 dev_dependencies:

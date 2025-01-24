@@ -33,7 +33,7 @@ class Navigationview extends StatelessWidget {
           type: BottomNavigationBarType.shifting,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
-         // backgroundColor: Colors.amberAccent,
+          // backgroundColor: Colors.amberAccent,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           onTap: (index) {
