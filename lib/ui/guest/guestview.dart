@@ -35,7 +35,7 @@ class Guestview extends StatelessWidget {
               backgroundColor: Colors.deepOrange,
               unselectedBackgroundColor: Colors.grey,
               unselectedLabelStyle: const TextStyle(color: Colors.black),
-              splashColor: Colors.limeAccent,
+              splashColor: const Color.fromARGB(255, 255, 252, 65),
               contentPadding: EdgeInsets.symmetric(horizontal: 22),
               labelSpacing: 14,
               labelStyle: const TextStyle(

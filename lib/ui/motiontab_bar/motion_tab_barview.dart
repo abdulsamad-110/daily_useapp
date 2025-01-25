@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 
+import '../booking/bookingsview.dart';
 import '../navigation/bottom_navigation_controller.dart';
 
 class MotionTabBarview extends StatelessWidget {
@@ -17,14 +18,16 @@ class MotionTabBarview extends StatelessWidget {
     UpcomingView(),
     Guestview(),
     Activitesview(),
+    Bookingsview(),
     ChampionshipsView(),
   ];
 
-  final labels = ["Home", "Guest", "Activities", "TabBar"];
+  final labels = ["Home", "Guest", "Activities", "Settings", "TabBar"];
   final icons = [
     Icons.home,
     Icons.person,
     Icons.favorite_outline,
+    Icons.settings_accessibility_outlined,
     Icons.emoji_events_outlined,
   ];
 
