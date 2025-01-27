@@ -1,32 +1,32 @@
-// import 'package:flutter/material.dart';
-
-// class Guestview extends StatelessWidget {
-//   const Guestview({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-
-//       //body:
-//     );
-//   }
-// }
-// import 'package:flutter/material.dart';
-
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:daily_practice/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../widgets/custom_drawer.dart';
+import '../upcomingdate/upcoming_controller.dart';
 
 class Guestview extends StatelessWidget {
   const Guestview({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<UpcomingController>();
+
     return DefaultTabController(
       initialIndex: 1,
       length: 3,
       child: Scaffold(
+        drawer: CustomDrawer(),
+        
         appBar: AppBar(
           centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                
+              },
+              icon: Icon(color: Colors.black, Icons.menu)),
           title: const Text(
             'Flutter Pkg TabBar',
             style: TextStyle(fontSize: 18),

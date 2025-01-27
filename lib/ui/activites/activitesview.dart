@@ -1,10 +1,17 @@
+import 'package:daily_practice/widgets/custom_appbar.dart';
+import 'package:daily_practice/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../upcomingdate/upcoming_controller.dart';
 
 class Activitesview extends StatelessWidget {
   const Activitesview({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<UpcomingController>();
+
     var arrColors = [
       Colors.red,
       Colors.amber,
@@ -25,14 +32,31 @@ class Activitesview extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 231, 86, 42),
-        centerTitle: true,
-        title: const Text(
-          'GridView.Count',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      // appBar: AppBar(
+      //   backgroundColor: const Color.fromARGB(255, 231, 86, 42),
+      //   centerTitle: true,
+      //   leading: IconButton(
+      //       onPressed: () {
+      //         CustomDrawer();
+      //       },
+      //       icon: Icon(color: Colors.white, Icons.menu)),
+      //   title: const Text(
+      //     'GridView.Count',
+      //     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
+      appBar: CustomAppBar(
+        title: 'GridView.Coun',
+        leadingIcon: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            print("Menu icon tapped!");
+            controller.scaffoldKey.currentState?.openDrawer();
+          },
         ),
       ),
+      //key: controller.scaffoldKey,
+      drawer: CustomDrawer(),
       body: Column(
         children: [
           ///// First GridView

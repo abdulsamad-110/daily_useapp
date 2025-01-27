@@ -1,9 +1,10 @@
 import 'package:daily_practice/ui/upcomingdate/upcoming_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../dialoges/my_dialog.dart';
-import '../navigation/navigationview.dart';
+import '../../widgets/custom_appbar.dart';
+import '../../widgets/custom_drawer.dart';
+import '../widgets/carouselview_widget.dart';
 
 class UpcomingView extends StatelessWidget {
   const UpcomingView({super.key});
@@ -13,35 +14,41 @@ class UpcomingView extends StatelessWidget {
     final UpcomingController controller = Get.put(UpcomingController());
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text('My AppBar'),
-        leading: IconButton(
+      key: controller.scaffoldKey,
+      drawer: CustomDrawer(),
+      appBar: CustomAppBar(
+        leadingIcon: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            print('Menu icon pressed');
+            print("Menu icon tapped!");
+            controller.scaffoldKey.currentState?.openDrawer();
           },
         ),
+        title: "My AppBar",
         actions: [
           IconButton(
             icon: const Icon(Icons.check_circle, color: Colors.green),
             onPressed: () {
-              ///// Dialog
+              print("Check icon pressed!");
               myDialog();
-              print('credit_card icon pressed');
             },
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.blueAccent,
-      //   onPressed: () {},
-      //   child: Icon(
-      //     Icons.add,
-      //     color: Colors.white,
-      //   ),
-      // ),
+      body: const Column(
+        children: [
+          ///// Carouselview widget
+          CarouselViewWidget(),
+
+          SizedBox(
+            height: 30,
+          ),
+          ///// Carouselview widget
+          CarouselViewWidget(
+            scrollDirection: Axis.vertical,
+          ),
+        ],
+      ),
     );
   }
 }

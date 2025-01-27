@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Bookingsview extends StatelessWidget {
@@ -62,10 +64,11 @@ class Bookingsview extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.all(10),
               itemCount: arrColors.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
+                childAspectRatio: 1.30,
               ),
               itemBuilder: (context, index) {
                 return Container(
@@ -94,11 +97,11 @@ class Bookingsview extends StatelessWidget {
             child: GridView.builder(
               padding: const EdgeInsets.all(10),
               itemCount: arrColors2.length,
-              gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 100,
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
-               // childAspectRatio: 0.25/,
+                childAspectRatio: 1.30,
               ),
               itemBuilder: (context, index) {
                 return Container(
